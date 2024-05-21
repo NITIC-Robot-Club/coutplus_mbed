@@ -2,6 +2,7 @@
 #define COUTPLUS_HPP
 
 #include <iostream>
+#include <iomanip>
 
 #define clearScreen() cout<<"\033[2"
 #define setPosition(x,y) cout<<"\033[%"<<(y)+1<<";"<<(x)+1<<"H"
@@ -30,6 +31,7 @@
 
 class coutplus {
 public:
+    void init(int int_dig=4,int float_dig=4);
     explicit coutplus(int line=-1);
     template<typename T>
     coutplus &operator<<(const T &value) {
